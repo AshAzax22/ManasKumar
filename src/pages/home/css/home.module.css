@@ -1,0 +1,576 @@
+/* Base styles */
+.container {
+  display: grid;
+  height: 99vh;
+  width: 100vw;
+  margin: auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 8px;
+  padding: 0.5vh;
+  font-size: 4px; /* Base font size */
+  color: white;
+}
+
+.container > * {
+  overflow: hidden;
+}
+
+.macBease {
+  grid-column: 1/3;
+  grid-row: 1/6;
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #000000 70px
+    ),
+    repeating-linear-gradient(#1e1e1e, #1b1b1b);
+}
+
+.macBease:hover {
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #ff7b00 70px
+    ),
+    repeating-linear-gradient(#ed9200, #fffb00);
+
+  /* background-color: rgb(255, 179, 0); */
+}
+
+.noMonday {
+  background-image: repeating-radial-gradient(
+    #0c0a0a 80%,
+    #2f312f 90%,
+    #3f4549 90%
+  );
+  background-size: 65px 65px;
+  grid-row: 6/10;
+  grid-column: 1/3;
+}
+
+.noMonday:hover {
+  background-image: repeating-radial-gradient(
+    #0025ba 80%,
+    #1745ff 90%,
+    #0099ff 90%
+  );
+  background-size: 65px 65px;
+  /* background-color: rgb(0, 140, 255); */
+}
+
+.contactMe {
+  background-color: #202020;
+  grid-column: 1/5;
+  grid-row: 10/13;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contactMe:hover {
+  background-color: #323232;
+}
+
+.instruction {
+  font-size: 3.5em; /* 14px */
+  color: #a1a1a1;
+}
+
+.error {
+  font-size: 3.5em; /* 14px */
+  color: red;
+}
+
+.success {
+  font-size: 3.5em;
+  color: rgb(0, 255, 0);
+}
+
+.contactMe .subContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.emailInput {
+  background-color: #4a4a4a;
+  width: 70%;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  font-size: 4em; /* 16px */
+}
+
+.submitButton {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 4em; /* 16px */
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: white;
+  color: black;
+}
+.submitButton:active {
+  background-color: black;
+}
+
+.collide {
+  grid-column: 3/6;
+  grid-row: 1/5;
+  --s: 70px; /* control the size */
+  --c1: #181818;
+  --c2: #202020;
+
+  --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
+    var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
+    var(--c1) 76% 86%, var(--c2) 86% 96%;
+  background: radial-gradient(
+      100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      #0008 96%,
+      #0000
+    ),
+    radial-gradient(
+        100% 100% at 0 100%,
+        #0000,
+        #0008 4%,
+        var(--_g),
+        var(--c1) 96%
+      )
+      var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+.collide:hover {
+  --s: 70px; /* control the size */
+  --c1: #7b00cd;
+  --c2: #6300a5;
+
+  --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
+    var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
+    var(--c1) 76% 86%, var(--c2) 86% 96%;
+  background: radial-gradient(
+      100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      rgba(120, 120, 120, 0) 96%,
+      #0000
+    ),
+    radial-gradient(
+        100% 100% at 0 100%,
+        #ffffff00,
+        rgba(255, 255, 255, 0) 4%,
+        var(--_g),
+        var(--c1) 96%
+      )
+      var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+.ashutosh {
+  grid-column: 3/5;
+  grid-row: 5/10;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 2px;
+  overflow: visible;
+}
+
+.ashutosh .imgContainer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.cardInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cardFront {
+  transform: rotateY(0deg);
+}
+
+.cardBack {
+  background-color: #000000;
+  border: 1px solid #404040;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 4em;
+  transform: rotateY(180deg);
+}
+
+.cardBack p {
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.cardBack p span {
+  position: absolute;
+  right: 0;
+}
+
+.soles {
+  --s: 120px;
+  --c1: #292929;
+  --c2: #000000;
+  --_g: radial-gradient(
+    25% 25% at 25% 25%,
+    var(--c1) 99%,
+    rgba(0, 0, 0, 0) 101%
+  );
+  background: var(--_g) var(--s) var(--s) / calc(2 * var(--s))
+      calc(2 * var(--s)),
+    var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)),
+    radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s)
+      var(--s),
+    repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%)
+      calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
+  grid-column: 5/7;
+  grid-row: 5/13;
+}
+
+.soles:hover {
+  --s: 120px;
+  --c1: #a40000;
+  --c2: #000000;
+}
+
+.about {
+  grid-column: 6/10;
+  grid-row: 1/5;
+  background-color: #202020;
+}
+
+.about:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.vibe {
+  grid-column: 7/10;
+  grid-row: 5/9;
+  --s: 150px; /* control the size */
+  --c1: #252525;
+  --c2: #000000;
+
+  --_g: var(--c1) 0% 5%, var(--c2) 6% 15%, var(--c1) 16% 25%, var(--c2) 26% 35%,
+    var(--c1) 36% 45%, var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%,
+    var(--c1) 76% 85%, var(--c2) 86% 95%, #0000 96%;
+  background: radial-gradient(50% 50% at 100% 0, var(--_g)),
+    radial-gradient(50% 50% at 0 100%, var(--_g)),
+    radial-gradient(50% 50%, var(--_g)),
+    radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
+      var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+.vibe:hover {
+  --c1: #9a2c92;
+  --c2: rgb(99, 0, 118);
+}
+
+.skills {
+  grid-column: 7/10;
+  grid-row: 9/13;
+  background-color: #202020;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #414141;
+}
+
+.skills > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 3.5em;
+}
+
+.skills:hover {
+  background-color: #323232;
+}
+
+.printSaathi {
+  --s: 120px; /* control the size */
+  --c1: #212121;
+  --c2: #282828;
+  --c3: #141414;
+
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
+  grid-column: 10/13;
+  grid-row: 1/6;
+}
+
+.printSaathi:hover {
+  --c1: #006b20;
+  --c2: #007b25;
+  --c3: #004615;
+}
+
+.socialHandles {
+  display: flex;
+  grid-column: 10/13;
+  grid-row: 6/7;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.socialHandle {
+  width: 7%;
+  padding: 3%;
+  aspect-ratio: 1;
+  background-color: #202020;
+  z-index: 1000;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #414141;
+}
+
+.socialHandle:hover img {
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+.twitter:hover {
+  background-color: #0078c3; /* Twitter brand color */
+}
+
+.linkedin:hover {
+  background-color: #013faa; /* LinkedIn brand color */
+}
+
+.whatsapp:hover {
+  background-color: #0eb14a; /* WhatsApp brand color */
+}
+
+.instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  ); /* Instagram gradient */
+}
+
+.github:hover {
+  background-color: #5100d4; /* GitHub brand color */
+}
+
+.ashutoshPurushottam {
+  grid-column: 10/13;
+  grid-row: 7/13;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.ashutoshPurushottam .name {
+  font-size: 15em; /* 68px */
+}
+
+.ashutoshPurushottam .job {
+  font-size: 10em; /* 40px */
+  margin: 8px 0px;
+}
+
+.ashutoshPurushottam .mail {
+  font-size: 5.5em;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 200;
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+
+@keyframes infoBackgroundChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.ashutoshPurushottam {
+  background: linear-gradient(45deg, #0f0c29, #302b63, #24243e, #0f0c29);
+  background-size: 300% 300%;
+  animation: infoBackgroundChange 10s infinite ease-in-out;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    font-size: 4px; /* 32px */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    font-size: 3px; /* 24px */
+  }
+}
+
+@media (max-width: 769px) {
+  .container {
+    font-size: 3px;
+  }
+
+  .socialHandle {
+    width: 12%;
+  }
+
+  .ashutoshPurushottam .name {
+    font-size: 10em;
+  }
+
+  .ashutoshPurushottam .job {
+    font-size: 7em;
+  }
+  .ashutoshPurushottam .mail {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 426px) {
+  .container {
+    grid-template-rows: repeat(15, 1fr);
+    height: 150vh;
+  }
+  .macBease {
+    grid-row: 1/3;
+    grid-column: 1/6;
+  }
+  .ashutosh {
+    grid-row: 3/7;
+    grid-column: 1/6;
+  }
+  .soles {
+    grid-row: 7/9;
+    grid-column: 1/5;
+    --s: 70px;
+  }
+
+  .soles:hover {
+    --s: 70px;
+  }
+
+  .skills .title {
+    font-size: 4.5em;
+  }
+
+  .skills {
+    grid-row: 7/9;
+    grid-column: 5/13;
+  }
+  .skillsContainer > div p {
+    margin: 0.5em;
+  }
+
+  .about {
+    grid-row: 1/4;
+    grid-column: 6/13;
+  }
+  .socialHandles {
+    grid-column: 6/13;
+    grid-row: 4/5;
+  }
+
+  .ashutoshPurushottam {
+    grid-row: 5/7;
+    grid-column: 6/13;
+  }
+
+  .ashutoshPurushottam .name {
+    font-size: 8em;
+  }
+  .ashutoshPurushottam .job {
+    font-size: 6em;
+    margin: 4px 0;
+  }
+
+  .collide {
+    grid-row: 7/9;
+    grid-column: 6/13;
+  }
+
+  .vibe {
+    grid-column: 6/13;
+    grid-row: 12/14;
+  }
+  .noMonday {
+    grid-column: 1/6;
+    grid-row: 12/14;
+  }
+  .collide {
+    grid-column: 8/13;
+    grid-row: 9/12;
+  }
+  .printSaathi {
+    grid-column: 1/8;
+    grid-row: 9/12;
+  }
+  .contactMe {
+    grid-column: 1/13;
+    grid-row: 14/16;
+  }
+}

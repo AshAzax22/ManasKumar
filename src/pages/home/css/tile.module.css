@@ -1,0 +1,71 @@
+.tileContainer {
+  /* background-color: #202020; */
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #414141;
+  cursor: pointer;
+  font-size: 4px; /* Base font size */
+  position: relative;
+}
+
+.title {
+  font-size: 6em; /* 24px */
+}
+
+.tileContainer:hover .title {
+  font-size: 4em;
+}
+
+.content {
+  font-size: 3.5em; /* 14px */
+  width: 90%;
+  text-align: right;
+  align-self: flex-end;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.link {
+  text-decoration: none;
+  display: inline-block;
+  align-self: flex-end;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.tileContainer button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin: 4px;
+}
+
+@media (max-width: 768px) {
+  .tileContainer {
+    font-size: 3px;
+  }
+
+  .title {
+    font-size: 5em;
+  }
+
+  .content {
+    font-size: 3.5em;
+  }
+}
+
+@media (max-width: 426px) {
+  .tileContainer button {
+    margin: 0px;
+  }
+  .arrow {
+    width: 16px;
+  }
+}
