@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./css/home.module.css";
 import Tile from "./components/Tile";
-import ashutosh from "../../assets/images/myImage.jpg";
+import manas from "../../assets/images/manas.jpg";
 import twitter from "../../assets/images/twitter.svg";
 import linkedin from "../../assets/images/linkedin.svg";
 import whatsapp from "../../assets/images/whatsapp.svg";
@@ -109,11 +109,7 @@ const Home = () => {
         <div className={`${styles.card} ${styles.ashutosh}`}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
-              <img
-                src={ashutosh}
-                alt="ashutosh"
-                className={styles.imgContainer}
-              />
+              <img src={manas} alt="ashutosh" className={styles.imgContainer} />
             </div>
             <div className={styles.cardBack}>
               <p>
@@ -147,7 +143,7 @@ const Home = () => {
 
         <Tile
           title="About"
-          content="As a software tester, I specialize in ensuring the quality and reliability of software applications. With a keen eye for detail and a methodical approach, I excel at identifying bugs, improving functionality, and enhancing user satisfaction. My goal is to deliver robust and error-free software solutions that meet user expectations and business requirements."
+          content="As a full stack web developer, I am passionate about creating dynamic and user-friendly web applications. With a strong foundation in both front-end and back-end technologies, I thrive on turning ideas into reality. My goal is to build innovative solutions that enhance user experiences and drive business success. I am always eager to learn and adapt to new challenges in the ever-evolving tech landscape."
           className={styles.about}
           anim="fade-down"
         />
@@ -160,16 +156,16 @@ const Home = () => {
           <h1 className={styles.title}>Skills</h1>
           <div className={styles.skillsContainer}>
             <div>
-              <p>JIRA</p>
-              <p>Manual Testing</p>
-              <p>Bug Testing</p>
-              <p>UI UX Design</p>
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JavaScript</p>
+              <p>Debugging</p>
             </div>
             <div>
-              <p>Sortware Testing</p>
-              <p>Selenium</p>
-              <p>Apache</p>
-              <p>Unit Testing</p>
+              <p>React</p>
+              <p>Mongo DB</p>
+              <p>Express</p>
+              <p>Node js</p>
             </div>
           </div>
         </div>
@@ -194,7 +190,7 @@ const Home = () => {
             <img src={twitter} alt="twitter" />
           </a>
           <a
-            href="https://www.linkedin.com/in/ashutosh-purushottam-370096228/"
+            href="https://www.linkedin.com/in/manaskumar8544/"
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.socialHandle} ${styles.linkedin}`}
@@ -214,7 +210,7 @@ const Home = () => {
             <img src={whatsapp} alt="whatsapp" />
           </a>
           <a
-            href="https://www.instagram.com/stfu__.ash/"
+            href="https://www.instagram.com/manasrockstar1018/"
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.socialHandle} ${styles.instagram}`}
@@ -224,7 +220,7 @@ const Home = () => {
             <img src={instagram} alt="instagram" />
           </a>
           <a
-            href="https://github.com/AshAzax22"
+            href="https://github.com/manaskumar8544"
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.socialHandle} ${styles.github}`}
@@ -240,11 +236,11 @@ const Home = () => {
           data-aos="fade-up-left"
           data-aos-duration="2000"
         >
-          <h1 className={styles.name}>Anurag</h1>
-          <h1 className={styles.name}>Gautam</h1>
-          <h1 className={styles.job}>UI/UX designer</h1>
+          <h1 className={styles.name}>Manas</h1>
+          <h1 className={styles.name}>Kumar</h1>
+          <h1 className={styles.job}>Full Stack Web Developer</h1>
           <a href="mailto:ashutoshash.az22@gmail.com" className={styles.mail}>
-            anurag.gautam@gmail.com
+            manaskumar184@gmail.com
           </a>
         </div>
       </div>
